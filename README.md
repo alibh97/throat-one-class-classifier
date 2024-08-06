@@ -121,4 +121,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-This documentation should help anyone set up, run, and use your throat image classification application, whether they're familiar with Docker or just getting started!
