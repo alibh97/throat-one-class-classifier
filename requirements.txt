@@ -1,0 +1,9 @@
+torch
+torchvision
+Pillow
+numpy
+scikit-learn
+transformers
+flask
+joblib
+flask_cors
