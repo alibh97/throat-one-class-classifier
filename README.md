@@ -31,10 +31,9 @@ Before you begin, ensure you have the following installed on your machine:
 
 You can clone the repository using Git:
 
-    \`\`\`bash
+    
     git clone https://github.com/yourusername/throat-image-classifier.git
     cd throat-image-classifier
-    \`\`\`
 
 Alternatively, you can download the repository as a ZIP file and extract it.
 
