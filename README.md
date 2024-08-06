@@ -1,4 +1,4 @@
-# Throat Image Classifier
+# Throat Image One Class Classifier
 
 This repository contains a Flask-based web application that uses a pre-trained Swin Transformer model to classify images as either "Throat" or "Not Throat." The application is containerized using Docker, making it easy to deploy and run on any platform that supports Docker. Additionally, an HTML frontend is provided for users to easily upload images to the app for classification.
 
