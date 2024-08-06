@@ -34,8 +34,8 @@ Before you begin, ensure you have the following installed on your machine:
 You can clone the repository using Git:
 
     
-    git clone https://github.com/yourusername/throat-image-classifier.git
-    cd throat-image-classifier
+    git clone https://github.com/alibh97/throat-one-class-classifier.git
+    cd throat-one-class-classifier
 
 Alternatively, you can download the repository as a ZIP file and extract it.
 
