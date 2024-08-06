@@ -43,7 +43,7 @@ Alternatively, you can download the repository as a ZIP file and extract it.
 
 Ensure that the `local_swin_base_patch4_window7_224/` directory contains the Swin Transformer model files. The directory already contains the `config.json` file and you should manually download and put the `model.safetensors` file in this directory from [this link](https://drive.google.com/uc?id=1cNAfozCGrLhIBmM1XrZHycJb0olG-21F&export=download).
 
-Or you can use `app2.py` instead of `app.py`(default). For that, you should change the last line of `dockerfile` and replace `app.py` with `app2.py`. This makes the app to be able to automatically download and use the modelو so there is no need to manually download the model and place it in the `local_swin_base_patch4_window7_224/` directory in this case.
+Or you can use `app2.py` instead of `app.py`(default). For that, you should change the last line of `dockerfile` and replace `app.py` with `app2.py`. This makes the app to be able to automatically download and use the model, so there is no need to manually download the model and place it in the `local_swin_base_patch4_window7_224/` directory in this case.
 
 Ensure that the `models/` directory contains the following:
 
