@@ -7,7 +7,8 @@ This repository contains a Flask-based web application that uses a pre-trained S
 ## Project Structure
 
     .
-    ├── app.py                            # The Flask web application
+    ├── app.py                            # The Flask web application.
+    ├── app2.py                           # The second Flask web application which automatically downloads the swinn base model.
     ├── Dockerfile                        # Dockerfile to containerize the application
     ├── requirements.txt                  # Python dependencies
     ├── index.html                        # HTML file for user interface
