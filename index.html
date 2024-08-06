@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Capture</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #imageContainer {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="result">Please give me an Image.</h3>
+    <button id="takePicButton">Take Pic</button>
+    <button id="browsePicButton">Browse Pic</button>
+    <input type="file" accept="image/*" capture="environment" id="cameraInput">
+    <input type="file" accept="image/*" id="fileInput">
+    <div id="imageContainer"></div>
+
+    <script>
+        const takePicButton = document.getElementById('takePicButton');
+        const browsePicButton = document.getElementById('browsePicButton');
+        const cameraInput = document.getElementById('cameraInput');
+        const fileInput = document.getElementById('fileInput');
+        const imageContainer = document.getElementById('imageContainer');
+        const resultElement = document.getElementById('result');
+
+        const url = 'http://localhost:5000';  // Replace with your actual Ngrok URL
+
+        takePicButton.addEventListener('click', () => {
+            cameraInput.click();
+        });
+
+        browsePicButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        cameraInput.addEventListener('change', handleFileSelect);
+        fileInput.addEventListener('change', handleFileSelect);
+
+        async function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(img);
+
+                    // Send the image to the server
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    try {
+                        const response = await fetch(`${url}/predict`, {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const result = await response.json();
+                        resultElement.innerText = result.result;
+                    } catch (error) {
+                        console.error('Error:', error);
+                        resultElement.innerText = 'Error predicting image.';
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
