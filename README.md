@@ -5,7 +5,17 @@ This repository contains a Flask-based web application that uses a pre-trained S
 ---
 
 ## Project Structure
-
+.
+├── app.py                        # The Flask web application
+├── Dockerfile                    # Dockerfile to containerize the application
+├── requirements.txt              # Python dependencies
+├── local_swin_base_patch4_window7_224/  # Directory containing the pre-trained Swin Transformer model
+│   └── *                         # (model files go here)
+└── models/                       # Directory containing the scaler and One-Class SVM model
+    ├── scaler_swinbase.pkl
+    └── ocsvm_model_swinbase.pkl
+    
+. ├── app.py # The Flask web application ├── Dockerfile # Dockerfile to containerize the application ├── requirements.txt # Python dependencies ├── index.html # HTML file for user interface ├── local_swin_base_patch4_window7_224/ # Directory containing the pre-trained Swin Transformer model │ └── * # (model files go here) └── models/ # Directory containing the scaler and One-Class SVM model ├── scaler_swinbase.pkl └── ocsvm_model_swinbase.pkl
 .
 ├── app.py # The Flask web application
 ├── Dockerfile # Dockerfile to containerize the application
