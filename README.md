@@ -97,11 +97,9 @@ The API will respond with a JSON object indicating whether the image is classifi
 
 or
 
-    \`\`\`json
     {
       "result": "NotThroat"
     }
-    \`\`\`
 
 ## Additional Notes
 
