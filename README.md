@@ -50,9 +50,7 @@ Ensure that the `models/` directory contains the following:
 
 Navigate to the directory containing the `Dockerfile` and run the following command to build the Docker image:
 
-\`\`\`bash
-docker build -t throat-classifier .
-\`\`\`
+    docker build -t throat-classifier .
 
 This command will create a Docker image named `throat-classifier` using the instructions provided in the `Dockerfile`.
 
@@ -60,9 +58,8 @@ This command will create a Docker image named `throat-classifier` using the inst
 
 Once the image is built, you can run the container using:
 
-\`\`\`bash
-docker run -p 5000:5000 throat-classifier
-\`\`\`
+    docker run -p 5000:5000 throat-classifier
+    
 
 This command will start the Flask web application inside a Docker container and expose it on port `5000`. The application will be accessible at `http://localhost:5000`.
 
@@ -87,9 +84,8 @@ Once the image is uploaded, the app will automatically send it to the Flask API,
 
 You can also test the API directly by sending a POST request with an image file. For example, using `curl`:
 
-\`\`\`bash
-curl -X POST -F "file=@/path/to/your/image.jpg" http://localhost:5000/predict
-\`\`\`
+    curl -X POST -F "file=@/path/to/your/image.jpg" http://localhost:5000/predict
+    
 
 The API will respond with a JSON object indicating whether the image is classified as "Throat" or "Not Throat."
 
