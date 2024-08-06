@@ -91,19 +91,17 @@ The API will respond with a JSON object indicating whether the image is classifi
 
 ### Sample Response
 
-\`\`\`json
-{
-  "result": "Throat"
-}
-\`\`\`
+    {
+      "result": "Throat"
+    }
 
 or
 
-\`\`\`json
-{
-  "result": "NotThroat"
-}
-\`\`\`
+    \`\`\`json
+    {
+      "result": "NotThroat"
+    }
+    \`\`\`
 
 ## Additional Notes
 
